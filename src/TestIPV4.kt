@@ -1,11 +1,11 @@
 fun main() {
-    val imp = Implementation()
+    val implementation = ImplementationChecker()
 
     // Test case 1: IP address consists of less than four segments
     val invalid1 = "192.168.1"
     checkIPV4(
         name = "given an ip address with less than four segments, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid1),
+        result = implementation.checkedIpv4(invalid1),
         correctResult = false
     )
 
@@ -13,7 +13,7 @@ fun main() {
     val invalid2 = "192.168.1.1.1"
     checkIPV4(
         name = "given an ip address with more than four segments, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid2),
+        result = implementation.checkedIpv4(invalid2),
         correctResult = false
     )
 
@@ -21,7 +21,7 @@ fun main() {
     val invalid3 = "19216811"
     checkIPV4(
         name = "given an ip address without dots, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid3),
+        result = implementation.checkedIpv4(invalid3),
         correctResult = false
     )
 
@@ -29,7 +29,7 @@ fun main() {
     val invalid4 = "256.168.1.1"
     checkIPV4(
         name = "given an ip address with a segment higher than 255, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid4),
+        result = implementation.checkedIpv4(invalid4),
         correctResult = false
     )
 
@@ -37,7 +37,7 @@ fun main() {
     val invalid5 = "-1.168.1.1"
     checkIPV4(
         name = "given an ip address with a segment less than zero, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid5),
+        result = implementation.checkedIpv4(invalid5),
         correctResult = false
     )
 
@@ -45,7 +45,7 @@ fun main() {
     val invalid6 = "192.168.01.1"
     checkIPV4(
         name = "given an ip address with a leading zero, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid6),
+        result = implementation.checkedIpv4(invalid6),
         correctResult = false
     )
 
@@ -53,7 +53,7 @@ fun main() {
     val invalid7 = "192.168.a.1"
     checkIPV4(
         name = "given an ip address with a non-numeric segment, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid7),
+        result = implementation.checkedIpv4(invalid7),
         correctResult = false
     )
 
@@ -61,7 +61,7 @@ fun main() {
     val invalid8 = "192.168.1.1 "
     checkIPV4(
         name = "given an ip address with an extra space at the end, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid8),
+        result = implementation.checkedIpv4(invalid8),
         correctResult = false
     )
 
@@ -69,7 +69,7 @@ fun main() {
     val invalid9 = " 192.168.1.1"
     checkIPV4(
         name = "given an ip address with an extra space at the start, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid9),
+        result = implementation.checkedIpv4(invalid9),
         correctResult = false
     )
 
@@ -77,7 +77,7 @@ fun main() {
     val invalid10 = " "
     checkIPV4(
         name = "given an empty ip address, when checked by ipv4 checker, then it should return false",
-        result = imp.ipv4Checker(invalid10),
+        result = implementation.checkedIpv4(invalid10),
         correctResult = false
     )
 
@@ -85,7 +85,7 @@ fun main() {
     val valid1 = "0.0.0.0"
     checkIPV4(
         name = "given an ip address with zeros, when checked by ipv4 checker, then it should return true",
-        result = imp.ipv4Checker(valid1),
+        result = implementation.checkedIpv4(valid1),
         correctResult = true
     )
 
@@ -93,7 +93,7 @@ fun main() {
     val valid2 = "255.255.255.255"
     checkIPV4(
         name = "given an ip address with 255s, when checked by ipv4 checker, then it should return true",
-        result = imp.ipv4Checker(valid2),
+        result = implementation.checkedIpv4(valid2),
         correctResult = true
     )
 
@@ -101,7 +101,7 @@ fun main() {
     val valid3 = "192.168.1.1"
     checkIPV4(
         name = "given a valid ip address, when checked by ipv4 checker, then it should return true",
-        result = imp.ipv4Checker(valid3),
+        result = implementation.checkedIpv4(valid3),
         correctResult = true
     )
 }

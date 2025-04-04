@@ -1,6 +1,9 @@
 fun main() {
-
-    val imp = Implementation()
+    // Test case :char in Sudoku board(dashes) del -> because if size like 16 is enter char from board ( A B C D E F)
+    // Test case : must each sub-boxes have all number (9 or 4)  no accept  ->
+    // Test case : if len of ( row or col) less size of list
+    // name fun should ver , name of obj should all name not imp , name of class
+    val implementation = ImplementationChecker()
 
     // Test case 1: Valid 9x9 Sudoku board
     val valid1 = listOf(
@@ -16,7 +19,7 @@ fun main() {
     )
     check(
         name = "given a valid 9x9 sudoku board, when checked by sudoku checker, then it should return true",
-        result = imp.sudokuChecker(valid1),
+        result = implementation.checkedSudoku(valid1),
         correctResult = true
     )
 
@@ -29,7 +32,7 @@ fun main() {
     )
     check(
         name = "given a valid 4x4 sudoku board, when checked by sudoku checker, then it should return true",
-        result = imp.sudokuChecker(valid2),
+        result = implementation.checkedSudoku(valid2),
         correctResult = true
     )
 
@@ -47,7 +50,7 @@ fun main() {
     )
     check(
         name = "given a sudoku board with duplicate in a row, when checked by sudoku checker, then it should return false",
-        result = imp.sudokuChecker(invalid1),
+        result = implementation.checkedSudoku(invalid1),
         correctResult = false
     )
 
@@ -65,7 +68,7 @@ fun main() {
     )
     check(
         name = "given a sudoku board with duplicate in a column, when checked by sudoku checker, then it should return false",
-        result = imp.sudokuChecker(invalid2),
+        result = implementation.checkedSudoku(invalid2),
         correctResult = false
     )
 
@@ -83,7 +86,7 @@ fun main() {
     )
     check(
         name = "Given an invalid Sudoku board with duplicate in a sub-box, when checked, then it should return false",
-        result = imp.sudokuChecker(invalid3),
+        result = implementation.checkedSudoku(invalid3),
         correctResult = false
     )
 
@@ -102,7 +105,7 @@ fun main() {
     )
     check(
         name = "Given an invalid Sudoku board with non-square shape, when checked, then it should return false",
-        result = imp.sudokuChecker(invalid5),
+        result = implementation.checkedSudoku(invalid5),
         correctResult = false
     )
     // Test case 8: Board with inconsistent row lengths
@@ -119,7 +122,7 @@ fun main() {
     )
     check(
         name = "Given an invalid Sudoku board with inconsistent row length, when checked, then it should return false",
-        result = imp.sudokuChecker(invalidSize),
+        result = implementation.checkedSudoku(invalidSize),
         correctResult = false
     )
 //    // Test case 7: Invalid characters in Sudoku board
