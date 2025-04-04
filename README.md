@@ -8,5 +8,9 @@ This project provides a simple Kotlin class `ImplementationChecker` that validat
    - Each row, column, and sub-grid contains no duplicate numbers (excluding placeholder characters like '-').
      
 Flowchart :: it helps you visualize a process in clear
- -checkedIpv4_Flowchart 
- -checkedSudoku_Flowchart 
+ 1.checkedIpv4_Flowchart ::  ![image](https://github.com/user-attachments/assets/01e40004-c68b-4b41-b986-dd5969294e5e)
+
+ 2.checkedSudoku_Flowchart ![sudoku drawio](https://github.com/user-attachments/assets/0cfd4379-3a8b-433e-91b2-7f7c821f5fd2)
+
+ 
+
